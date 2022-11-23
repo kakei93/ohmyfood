@@ -1,0 +1,29 @@
+.entete-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 18px 0;
+    .entete-menu-return {
+        width: 10%;
+        a {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            text-decoration: none;
+            color: black;
+            padding: 10px 0;
+            font-size: 26px;
+        }
+    }
+    .entete-menu-logo {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        img {
+            height: 25px;
+        }
+    }
+}
+
+

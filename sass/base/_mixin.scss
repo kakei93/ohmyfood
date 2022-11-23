@@ -1,0 +1,17 @@
+@mixin for-phone-down {
+    @media (max-width: 768px) { @content; }
+}
+
+@mixin for-tablet-down {
+    @media (max-width: 992px) { @content; }
+}
+
+@mixin for-desktop-down {
+    @media (max-width: 1920px) { @content; }
+}
+
+@mixin centrer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

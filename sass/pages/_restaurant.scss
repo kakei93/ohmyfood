@@ -1,0 +1,404 @@
+@include for-desktop-down {
+    
+/************Loading menu***************/
+
+@keyframes loading {
+    from {
+      opacity: 0;
+      transform: translate(-200px,-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0,0);
+    }
+}
+
+.carte-menu:nth-child(1) {
+    animation: loading 2s ease-out;
+}
+
+.carte-menu:nth-child(2) {
+    animation: loading 2s ease-out 300ms;
+}
+
+.carte-menu:nth-child(3) {
+    animation: loading 2s ease-out 600ms;
+}
+
+.carte-menu:nth-child(4) {
+    animation: loading 2s ease-out 900ms;
+}
+
+
+/***************fin loading menu**************/
+
+
+    .menu-img img{
+        width: 100%;
+        object-fit: cover;
+        height: 400px;
+    }
+    .menu-resto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        border-radius: 50px 50px 0 0;
+        width: 100%;
+        position: relative;
+        margin-top: -50px;
+        .menu-resto-nom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .titre-menu {
+                justify-content: flex-start;
+                margin: 40px 10px;
+            }
+            .heart-menu {
+                font-size: 30px;
+                z-index: 50;
+                background: #f2f2f2;
+                transition-duration: 1s;
+                margin-right: 40px;
+                &:hover {
+                    opacity: 0;
+                }
+                
+            }
+            .heart-bg-menu  {
+                font-size: 30px;
+                background:linear-gradient(to bottom,#ff79da,#9356dc);
+                background-clip:text;
+                color:transparent;
+                z-index: 10;
+                position: absolute;
+                -webkit-background-clip: text;
+                right: 40px;
+            }
+        }
+        .contenant-carte {
+            display: flex ;
+            width: 90%;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .carte {
+            width: 44%;
+            .carte-titre {
+                padding-left: 10px;
+                .titre-plat {
+                    font-weight: 100;
+                    text-transform: uppercase;
+                    margin: 0 0 5px 0;
+                }
+                .carte-titre-trait {
+                    width: 50px;
+                    border: 2px solid $color-tertiary;
+                }
+            }
+            .carte-choix {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 15px;
+                .carte-menu {
+                    display: flex;
+                    width: 374px;
+                    height: 70px;
+                    box-shadow: 6px 6px 6px #a4a3a3;
+                    margin-bottom: 15px;
+                    border-radius: 15px;
+                    background-color: white;
+                    .carte-menu-text {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        width: 353px;
+                        margin-left: 10px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        .nom-plat {
+                            height: 50%;
+                            font-size: 18px !important;
+                            font-weight: bold;
+                            margin: 0;
+                            padding-top: 10px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        p {
+                            font-size: 16px;
+                            height: 50%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            margin: 0;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    .carte-menu-prix {
+                        display: flex;
+                        align-items: flex-end;
+                        margin: 0 20px 12px 20px;
+                        width: 40px;
+                    }
+                    .carte-menu-check {
+                        @include centrer;
+                        width:0%;
+                        height:100%;
+                        background-color: $color-tertiary;
+                        border-radius: 0 15px 15px 0;
+                        opacity: 0;
+                        // transition: transform 500ms ease-in-out;
+                        position: relative;
+                        top: 0;
+                        right: -70px;
+                        >.check-out {
+                            display: flex;
+                            align-items: center;
+                            font-size: 25px;
+                            transition: transform 1s ease-in-out;
+                            color: white;
+                        }
+                    }
+                    &:hover >.carte-menu-check {
+                        width: 100px;
+                        opacity: 1;
+                        transform: translate(-100%, 0);
+                        transition: transform 1s ease;
+                        >.check-out {
+                            transform: rotate(360deg);
+                        }
+                    }
+                    }
+                }
+            }
+        }
+        }
+        .btn-menu {
+            border-radius: 50px;
+            margin: 30px 0 50px 0;
+            padding: 15px 50px;
+            font-size: 16px;
+            // background-color: #ff79da;
+            color: white;
+            border: none;
+            }
+
+
+
+@include for-tablet-down {
+
+    .menu-img img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .menu-resto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        border-radius: 50px 50px 0 0;
+        width: 100%;
+        position: relative;
+        margin-top: -50px;
+        .menu-resto-nom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .titre-menu {
+                justify-content: flex-start;
+                margin: 40px 10px;
+            }
+            .heart-menu {
+                font-size: 30px;
+            }
+        }
+        .contenant-carte {
+            flex-direction: column;
+            .carte {
+                width: 100%;
+                .carte-titre {
+                    padding-left: 10px;
+                    .titre-plat {
+                        font-weight: 100;
+                        text-transform: uppercase;
+                        margin: 0 0 5px 0;
+                    }
+                    .carte-titre-trait {
+                        width: 50px;
+                        border: 2px solid $color-tertiary;
+                    }
+                }
+                .carte-choix {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 15px;
+                    .carte-menu {
+                        display: flex;
+                        width: 96%;
+                        height: 70px;
+                        box-shadow: 6px 6px 6px #a4a3a3;
+                        margin-bottom: 15px;
+                        border-radius: 15px;
+                        background-color: white;
+                        .carte-menu-text {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            width: 85%;
+                            margin-left: 10px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            .nom-plat {
+                                height: 50%;
+                                font-size: 18px !important;
+                                font-weight: bold;
+                                margin: 0;
+                                padding-top: 10px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                            p {
+                                font-size: 16px;
+                                height: 50%;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                margin: 0;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                        .carte-menu-prix {
+                            display: flex;
+                            align-items: flex-end;
+                            margin: 0 30px 12px 20px;
+                        }
+                    }
+                }
+        }
+        .btn-menu {
+            border-radius: 50px;
+            margin: 30px 0 50px 0;
+            padding: 15px 50px;
+            font-size: 16px;
+            background-image: linear-gradient(to bottom,#ff79da,#9356dc);
+            color: white;
+            border: none;
+            &:hover {
+                opacity: 0.7;
+                box-shadow: 5px 5px 5px rgb(56, 56, 56);
+            }
+        }    
+        }
+    }
+    }
+
+@include for-phone-down {
+
+    .menu-img img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .menu-resto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        border-radius: 50px 50px 0 0;
+        width: 100%;
+        position: relative;
+        margin-top: -50px;
+        .menu-resto-nom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .titre-menu {
+                justify-content: flex-start;
+                margin: 40px 10px;
+            }
+            .heart-menu {
+                font-size: 30px;
+            }
+        }
+        .carte {
+            width: 100%;
+            .carte-titre {
+                padding-left: 10px;
+                .titre-plat {
+                    font-weight: 100;
+                    text-transform: uppercase;
+                    margin: 0 0 5px 0;
+                }
+                .carte-titre-trait {
+                    width: 50px;
+                    border: 2px solid $color-tertiary;
+                }
+            }
+            .carte-choix {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 15px;
+                .carte-menu {
+                    display: flex;
+                    width: 96%;
+                    height: 70px;
+                    box-shadow: 6px 6px 6px #a4a3a3;
+                    margin-bottom: 15px;
+                    border-radius: 15px;
+                    background-color: white;
+                    .carte-menu-text {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        width: 85%;
+                        margin-left: 10px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        .nom-plat {
+                            height: 50%;
+                            font-size: 18px !important;
+                            font-weight: bold;
+                            margin: 0;
+                            padding-top: 10px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        p {
+                            font-size: 16px;
+                            height: 50%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            margin: 0;
+                            text-overflow: ellipsis;
+                        }
+                    .carte-menu-prix {
+                        display: flex;
+                        align-items: flex-end;
+                        margin: 0 30px 12px 20px;
+                    }
+                    }
+                }
+            }
+        .btn-menu {
+            border-radius: 50px;
+            margin: 30px 0 50px 0;
+            padding: 15px 50px;
+            font-size: 16px;
+            background-color: #ff79da;
+            color: white;
+            border: none;
+        }    
+        }
+    } 
+    }

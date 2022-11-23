@@ -1,0 +1,705 @@
+/*************************** Sur tous les ecrans jusqu'à 1920px (Desktop en général) *******************************/
+
+@include for-desktop-down {
+    /****** chargement ecran d'accueil ******/
+    
+    .loader {
+        @include centrer; 
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-image: linear-gradient(to top, #9356dc, #ff79da);
+        animation: loader 3s ease-in-out 2s both;
+        .logo-plat {
+            @include centrer; 
+            font-size: 200px;
+            width: 300px;
+            height: 300px;
+            color: $color-tertiary;
+            background-color: $color-tertiary;
+            border-radius: 200px;
+            animation: rotation 3s ease-in, couleur 3s ease-out;
+            opacity: 0; 
+        }
+    }
+    @keyframes loader {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+    
+        25% {
+            opacity: 0.75;
+        }
+        
+        50% {
+            opacity: 0.5;
+        }
+    
+        75% {
+            opacity: 0.25;
+        }
+    
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    @keyframes rotation {
+        0% {
+            transform: scale(0) rotate(0);
+            opacity: 1;
+        }
+        25% {
+            transform: scale(0) rotate(0);
+        }
+        50% {
+            transform: scale(1) rotate(0);
+        }
+        75% {
+            transform: scale(1) rotate(360deg);
+        }
+        100% {
+            transform: scale(1) rotate(360deg);
+            opacity: 0;
+        }
+        }
+        
+        @keyframes couleur {
+        5% {
+            color: #FF79DA;
+        }
+        10% {
+            color: #FF79DA;
+        }
+        55% {
+            color: #FF79DA;
+        }
+        60% {
+            color: #9356DC;
+        }
+        65% {
+            color: #9356DC;
+        }
+        80% {
+            color: #9356DC;
+        }
+        100% {
+            color: #9356DC;
+        }
+    }
+/************fin animation loader**************/
+
+    .form-loc {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(233, 233, 233);
+        box-shadow: 0 5px 5px -5px grey inset;
+        height: 50px;
+        align-items: center;
+        .form-loc-search {
+            border: none;
+            background-color: rgb(233, 233, 233);
+            font-weight: bold;
+            padding: 10px 0 10px 10px;
+            outline: none;
+        }
+        .form-loc-icon {
+            padding-left: 30px;
+        }
+    }   
+    
+    
+    .titre {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        h1 {
+            font-size: 26px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 20px;
+        }
+        .soustitre {
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 20px;
+        }
+        .btn {
+            border-radius: 50px;
+            padding: 18px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            width: 240px;
+            margin: 20px;
+            background-image: linear-gradient(to bottom,#ff79da,#9356dc);
+            &:hover {
+                opacity: 0.7;
+                box-shadow: 5px 5px 5px rgb(56, 56, 56);
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    .selection {
+        margin: 50px 0;
+        h2 {
+            margin-left: 25px;
+            font-weight: bold;
+        }
+    }
+    
+    .fonction {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 25px;
+        .fonction-choix {
+            display: flex;
+            align-items: center;
+            border-radius: 25px;
+            box-shadow: 6px 6px 6px #e4e4e4;
+            background-color: #f2f2f2;
+            padding: 30px 0;
+            margin-bottom: 20px;
+            position: relative;
+            margin-right: 30px;
+            width: 30%;
+            &:hover {
+                background-color: #f0e5fd;
+            }
+            .fonction-choix-numb {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                border: 1px solid;
+                border-radius: 50%;
+                color: white;
+                background-color: #9356dc;
+                position: absolute;
+                left: -15px;
+                top: 25px;
+            }
+            .fonction-choix-icon {
+                margin-left: 35px;
+                color: gray;
+            }
+            .fonction-choix-text {
+                margin: 0 15px;
+                font-weight: 900;
+            }
+        }
+    }
+    
+    
+    
+    .restaurant {
+        width: 100%;
+        height: auto;
+        background-color: #f2f2f2;
+        padding: 40px 0px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .restaurant-titre {
+            align-self: flex-start;
+            margin-left: 25px;
+        }
+    }
+    
+    .restaurant-bloc {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 30px;
+        width: 100%;
+        
+    }
+    .restaurant-choix {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        box-shadow: 6px 6px 6px #e4e4e4;
+        position: relative;
+        .restaurant-choix-lien {
+            text-decoration: none;
+            color: black;
+            .restaurant-choix-img {
+                width: 100%;
+                height: 170px;
+                object-fit: cover;
+                border-radius: 20px 20px 0 0;
+            }
+            .restaurant-choix-info {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                .restaurant-choix-info-text {
+                    width: 60%;
+                    h3 {
+                        margin: 12px 0px;
+                        padding-left: 12px;
+                    }
+                    p {
+                        margin-top: -5px;
+                        padding-left: 12px;
+                    }
+                }
+                .restaurant-choix-info-icon {
+                    width: 40%;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    padding-right: 20px;
+                    font-size: 30px;
+                    position:relative;
+                    display: block;
+                    .heart {
+                        font-size: 30px;
+                        position: absolute;
+                        background: white;
+                        z-index: 50;
+                        top: 20px;
+                        right: 20px;
+                        transition-duration: 1s;
+                        &:hover {
+                            opacity: 0;
+                        }
+                    }
+                    .heart-bg {
+                        font-size: 30px;
+                        background:linear-gradient(to bottom,#ff79da,#9356dc);
+                        background-clip:text;
+                        color:transparent;
+                        z-index: 10;
+                        position: absolute;
+                        -webkit-background-clip: text;
+                        top: 20px;
+                        right: 20px;
+                    }
+                }
+                .restaurant-choix-nouveau {
+                    position:absolute;
+                    background-color: $color-tertiary;
+                    color: rgba(0, 0, 0, 0.596);
+                    border-radius: 5px;
+                    padding: 8px;
+                    right: 10px;
+                    top: 10px;
+                    z-index: 99;
+                }
+            }
+        }
+    }
+
+/*************************** Sur tous les ecrans jusqu'à 992px (Tablette en général) *******************************/
+
+@include for-tablet-down {
+
+
+    .form-loc {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(233, 233, 233);
+        box-shadow: 0 5px 5px -5px grey inset;
+        height: 50px;
+        align-items: center;
+        .form-loc-search {
+            border: none;
+            background-color: rgb(233, 233, 233);
+            font-weight: bold;
+            padding: 10px 0 10px 10px;
+            outline: none;
+        }
+        .form-loc-icon {
+            padding-left: 30px;
+        }
+    }   
+    
+    
+    .titre {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        h1 {
+            font-size: 26px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 20px;
+        }
+        .soustitre {
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 20px;
+        }
+        .btn-btn_rad {
+            border-radius: 50px;
+            padding: 18px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            width: 240px;
+            background-color: $color-secondary;
+            margin: 20px;
+        }
+    }
+    
+    
+    
+    
+    
+    .selection {
+        margin: 50px 0;
+        h2 {
+            margin-left: 25px;
+            font-weight: bold;
+        }
+    }
+    
+    .fonction {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 25px;
+        .fonction-choix {
+            display: flex;
+            align-items: center;
+            border-radius: 25px;
+            box-shadow: 6px 6px 6px #e4e4e4;
+            background-color: #f2f2f2;
+            padding: 30px 0;
+            margin-bottom: 20px;
+            position: relative;
+            margin-right: 30px;
+            .fonction-choix-numb {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                border: 1px solid;
+                border-radius: 50%;
+                color: white;
+                background-color: #9356dc;
+                position: absolute;
+                left: -15px;
+                top: 35px !important;
+            }
+            .fonction-choix-icon {
+                margin-left: 35px;
+                color: gray;
+            }
+            .fonction-choix-text {
+                margin: 0 15px;
+                font-weight: 900;
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    .restaurant {
+        width: 100%;
+        height: auto;
+        background-color: #f2f2f2;
+        padding: 40px 0px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .restaurant-titre {
+            align-self: flex-start;
+            margin-left: 25px;
+        }
+    }
+    
+    .restaurant-bloc {
+        width: 100%;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .restaurant-choix {
+        width: 90% !important;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        box-shadow: 6px 6px 6px #e4e4e4;
+        position: relative;
+        .restaurant-choix-lien {
+            text-decoration: none;
+            color: black;
+            .restaurant-choix-img {
+                width: 100%;
+                height: 170px;
+                object-fit: cover;
+                border-radius: 20px 20px 0 0;
+            }
+            .restaurant-choix-info {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                .restaurant-choix-info-text {
+                    width: 60%;
+                    h3 {
+                        margin: 12px 0px;
+                        padding-left: 12px;
+                    }
+                    p {
+                        margin-top: -5px;
+                        padding-left: 12px;
+                    }
+                }
+                .restaurant-choix-info-icon {
+                    width: 40%;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    padding-right: 20px;
+                    font-size: 30px;
+                    .heart {
+                        font-size: 30px;
+                        position: absolute;
+                    }
+                    .heart-bg {
+                        font-size: 30px;
+                        background:linear-gradient(to bottom,#ff79da,#9356dc);
+                        background-clip:text;
+                        color:transparent;
+                        z-index: 10;
+                        position: absolute;
+                        -webkit-background-clip: text;
+                        top: 20px;
+                        right: 20px;
+                    }
+                }
+                .restaurant-choix-nouveau {
+                    position: absolute;
+                    background-color: $color-tertiary;
+                    color: rgba(0, 0, 0, 0.596);
+                    border-radius: 5px;
+                    padding: 8px;
+                    right: 10px;
+                    top: 10px;
+                }
+            }
+        }
+        
+    }
+    }
+/*************************** Sur tous les ecrans jusqu'à 768px (Smartphone en général) *******************************/
+@include for-phone-down {
+
+
+.form-loc {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(233, 233, 233);
+    box-shadow: 0 5px 5px -5px grey inset;
+    height: 50px;
+    align-items: center;
+    .form-loc-search {
+        border: none;
+        background-color: rgb(233, 233, 233);
+        font-weight: bold;
+        padding: 10px 0 10px 10px;
+        outline: none;
+    }
+    .form-loc-icon {
+        padding-left: 30px;
+    }
+
+}   
+
+
+
+.titre {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    h1 {
+        font-size: 26px;
+        text-align: center;
+        font-weight: bold;
+        margin: 10px 20px;
+    }
+    .soustitre {
+        font-size: 18px;
+        text-align: center;
+        margin: 10px 20px;
+    }
+    .btn-btn_rad {
+        border-radius: 50px;
+        padding: 18px;
+        font-size: 16px;
+        color: white;
+        border: none;
+        width: 240px;
+        background-color: $color-secondary;
+        margin: 20px;
+    }
+}
+
+
+
+
+
+.selection {
+    margin: 50px 0;
+    h2 {
+        margin-left: 25px;
+        font-weight: bold;
+        
+    }
+}
+.fonction {
+    display: flex;
+    flex-direction: column !important;
+    padding: 25px !important;
+    .fonction-choix {
+        display: flex;
+        border-radius: 25px;
+        box-shadow: 6px 6px 6px #e4e4e4;
+        background-color: #f2f2f2;
+        padding: 30px 0;
+        margin-bottom: 20px;
+        position: relative;
+        width: 95% !important;
+        .fonction-choix-numb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border: 1px solid;
+            border-radius: 50%;
+            color: white;
+            background-color: #9356dc;
+            position: absolute;
+            left: -15px;
+            top: 25px !important;
+        }
+        .fonction-choix-icon {
+            margin-left: 35px;
+            color: gray;
+        }
+        .fonction-choix-text {
+            margin: 0 15px;
+            font-weight: 900;
+        }
+    }
+}
+
+
+
+
+
+.restaurant {
+    width: 100%;
+    height: auto;
+    background-color: #f2f2f2;
+    padding: 40px 0px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .restaurant-titre {
+        align-self: flex-start;
+        margin-left: 25px;
+    }
+        
+}
+
+.restaurant-bloc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurant-choix-lien {
+    text-decoration: none;
+    color: black;
+    .restaurant-choix-img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    .restaurant-choix-info {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        .restaurant-choix-info-text {
+            width: 60%;
+            h3 {
+                margin: 12px 0px;
+                padding-left: 12px;
+            }
+            p {
+                margin-top: -5px;
+                padding-left: 12px;
+            }
+        }
+        .restaurant-choix-info-icon {
+            width: 40%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding-right: 20px;
+            font-size: 30px;
+            .heart {
+                font-size: 30px;
+                position: absolute;
+            }
+            .heart-bg {
+                font-size: 30px;
+                background:linear-gradient(to bottom,#ff79da,#9356dc);
+                background-clip:text;
+                color:transparent;
+                z-index: 10;
+                position: absolute;
+                -webkit-background-clip: text;
+                top: 20px;
+                right: 20px;
+            }
+        }
+        .restaurant-choix-nouveau {
+            position: absolute;
+            background-color: $color-tertiary;
+            color: rgba(0, 0, 0, 0.596);
+            border-radius: 5px;
+            padding: 8px;
+            right: 10px;
+            top: 10px;
+        }
+    }
+}
+}
+
+}

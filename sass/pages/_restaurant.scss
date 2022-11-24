@@ -184,9 +184,13 @@
             margin: 30px 0 50px 0;
             padding: 15px 50px;
             font-size: 16px;
-            background-color: #ff79da;
+            background-image: linear-gradient(to bottom,#ff79da,#9356dc);
             color: white;
             border: none;
+            &:hover {
+                opacity: 0.7;
+                box-shadow: 5px 5px 5px rgb(56, 56, 56);
+            }
             }
 
 

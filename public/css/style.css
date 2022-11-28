@@ -823,7 +823,7 @@ ul li a .hand {
   .menu-resto .carte .carte-choix .carte-menu .carte-menu-prix {
     display: flex;
     align-items: flex-end;
-    margin: 0 20px 12px 20px;
+    margin: 0 0 12px 20px;
     width: 15%;
   }
   .menu-resto .carte .carte-choix .carte-menu .carte-menu-check {
@@ -837,7 +837,7 @@ ul li a .hand {
     opacity: 0;
     position: relative;
     top: 0;
-    right: -74px;
+    right: -80px;
     overflow: hidden;
   }
   .menu-resto .carte .carte-choix .carte-menu .carte-menu-check > .check-out {
@@ -855,6 +855,10 @@ ul li a .hand {
   }
   .menu-resto .carte .carte-choix .carte-menu:hover > .carte-menu-check > .check-out {
     transform: rotate(360deg);
+  }
+  .menu-resto .carte .carte-choix .carte-menu:hover > .carte-menu-prix {
+    transform: translate(-50%, 0);
+    transition: transform 1s linear;
   }
 }
 .btn-menu {
@@ -963,7 +967,10 @@ ul li a .hand {
   .menu-resto .contenant-carte .carte .carte-choix .carte-menu .carte-menu-prix {
     display: flex;
     align-items: flex-end;
-    margin: 0 30px 12px 20px;
+    margin: 0 0 12px 20px;
+  }
+  .menu-resto .contenant-carte .carte .carte-choix .carte-menu .carte-menu-check {
+    right: -90px;
   }
   .menu-resto .contenant-carte .btn-menu {
     border-radius: 50px;
@@ -1066,10 +1073,13 @@ ul li a .hand {
     margin: 0;
     text-overflow: ellipsis;
   }
-  .menu-resto .carte .carte-choix .carte-menu .carte-menu-text .carte-menu-prix {
+  .menu-resto .carte .carte-choix .carte-menu .carte-menu-prix {
     display: flex;
     align-items: flex-end;
-    margin: 0 30px 12px 20px;
+    margin: 0 0 12px 20px;
+  }
+  .menu-resto .carte .carte-choix .carte-menu .carte-menu-check {
+    right: -76px;
   }
   .menu-resto .carte .btn-menu {
     border-radius: 50px;

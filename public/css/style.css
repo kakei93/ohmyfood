@@ -854,14 +854,14 @@ ul li a .hand {
     width: 100px;
     opacity: 1;
     transform: translate(-100%, 0);
-    transition: transform 1s ease;
+    transition: transform 1s ease-out;
   }
   .menu-resto .carte .carte-choix .carte-menu:hover > .carte-menu-check > .check-out {
     transform: rotate(360deg);
   }
   .menu-resto .carte .carte-choix .carte-menu:hover > .carte-menu-prix {
     transform: translate(-50%, 0);
-    transition: transform 1s linear;
+    transition: transform 1s ease-out;
   }
 }
 .btn-menu {
@@ -933,7 +933,7 @@ ul li a .hand {
   }
   .menu-resto .contenant-carte .carte .carte-choix .carte-menu {
     display: flex;
-    width: 75%;
+    width: 96%;
     height: 70px;
     box-shadow: 6px 6px 6px #a4a3a3;
     margin-bottom: 15px;
